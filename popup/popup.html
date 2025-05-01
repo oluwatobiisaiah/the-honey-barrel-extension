@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="popup.css" />
+  <title>BAXUS Bottle Finder</title>
+</head>
+
+<body>
+  <div class="popup-container">
+    <div class="header">
+      <h3>Honey Barrel</h3>
+      <span class="logo">
+        <img src="../assets//honey_barrel.png" alt="Logo" >
+      </span>
+
+      <label class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider">
+          <img id="theme-icon" src="../assets//icons/sun.svg" alt="Theme Icon" />
+        </span>
+      </label>
+
+    </div>
+
+    <div id="bottle-info" class="card fade-in">
+      <p id="retail-name">🥃 Bottle: <span></span></p>
+      <p id="retail-price">💲 Retail Price: <span></span></p>
+    </div>
+
+    <div id="loading" class="spinner-container fade-in">
+      <div class="spinner"></div>
+      <p>Searching BAXUS...</p>
+    </div>
+
+    <div id="result" class="card fade-in hidden"></div>
+  </div>
+
+</body>
+<script src="popup.js"></script>
+
+</html>
