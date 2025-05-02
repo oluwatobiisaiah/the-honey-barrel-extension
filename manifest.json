@@ -4,9 +4,11 @@
   "version": "1.0",
   "description": "Compare bottle prices with BAXUS marketplace.",
   "permissions": [
+    "tabs",
     "activeTab",
     "scripting",
-    "storage"
+    "storage",
+    "webRequest"
   ],
   "action": {
     "default_popup": "popup/popup.html"
@@ -17,14 +19,25 @@
   "content_scripts": [
     {
       "matches": [
-        "http://*/*",
-        "https://*/*"
+        "<all_urls>"
       ],
       "js": [
+        "utils/libs/resemble.js",
         "content.js"
       ],
       "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "utils/matcher.js"
+      ]
     }
+  ],
+  "host_permissions": [
+    "<all_urls>"
   ],
   "web_accessible_resources": [
     {
